@@ -1,0 +1,1296 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4GVl5ACwAEV1JQAA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"1beac94c95","agent":"","transactionName":"NQQGYUZWDUNSVUMPWQxOIkBaVBdZXFgYBVkXExdQQ1YRVR1AXgNBEU8SXFFAEApDRFgBRAcSFw==","atts":"GUMRFw5MQVNcWVwPUxFPF1RdWxdYQUNoDl8GTxdcTlJBCgsOG0REBxARUEdDPEJWUFIUUxBDXhdcQxdAQAwYSVUNFBZGUURNVVdOGQlEBU4IWlNeDQ9dU08SC00CC0BGRAZDHFVYE0QRBElDBRJQcXZifx4TUCMlZnAZUkgWBHVUBlNXO2EFGBNCXFFFA0URQ0gXV1gMW1pTREheFwMXRVtDFkRYGEQPTAdDXgYGG0FTXFlcD1MRTwVfR2gCXlxYTgtZFxI7XFAZEFlJUxVcAlBNRlZbWAhZVkUZA04SBBZcWVINREBpXhVpBw8QUEZHEVlAUxkVXxgERg8BG0FCVkdCA0UWPhFGUUU8UVRTWRIUWEMpWk5eD1xSGQJIBkJJM1xaUwxHQBZ5MhZUT1UOFEUVCgUOGVYfQiYBVl9YTAIDBwdWB1JQRHNdRQZWXE4YUA5MUUYZFlQMX1hfUhUYEhMLURlSB0geQ0QDRE8IClNbGRBZSVMVXAVbVUgXRlISRVZFQzlXFxUMakBOE1URDBUVUxESDVpaGgxCHkNZDVgNFgoXGBUAX1xdXgNFTAAORmtQEV9GRmgPUkwSDU9RFVkEHxRUCVkJCAFGGmgFUkMYRA9MB0NeBwwbQVNcWVwPUxFPAVFMGglHRxtUCVkJCAEYR14EXlJCQhRTTBINT1EVWQMHBBtEVQ0OD1xRRE1TQERRElkJBAobR14ZVREMAVIaQAILWl9eBkMdaVAPUkwSDU9RFVkCBBoVBVkNCg1QRxkGVEtaWAFRBwUNWxpECkpWFA1SGkACC1pfXgZDHWloDkURAkpGXU0GEgkEA0oUAQ4LXl1SEB5saV8VQgFPF1xOUkEKCwMbRFUNDg9cUURNQEFZU0tTBhlJWVVZBEVSUVJLRhAEAlBGUg1TVhhED0wHQ14HGBUAX1xdXgNFPRULQVVbPENaTFJEDFBSUgUYFQBfXF1eA0VMERZaUBoGVEsbRANFEQgLW11TTUNaTFJEDFNWVRkWVAxfWF9SFRg9PgxGR0UAHkBfTQMUWFBIF1dYDFtaU0RIXQs+EBtHXhlVEQwCVRpAAgtaX14GQx1pUAdCTBINT1EVWQEfFEIVUxA+DVEWDVQABgUFXgROQwdaW1wKVUAYWBZCCwwNT1FbGnVdUmIVUxAoABtHXhlVEQwEUxpAAgtaX14GQx13YDVzLiNKRl1NBhIJBwReGkACC1pfXgZDHWlQB1oLTxdcTlJBCgEGG0RVDQ4PXFFETVFZRWgTRQcTO1xQGRBZSVMVXAdRTUZWW1gIWVZFGQ5FBAgWRkBBCkNaQhkVXxgERg8EG0FTXFlcD1MRTw9ca0VNQ1pMUkQMUk1GVltYCFlWRRkDUhpMDkJAGgBfXF1eAxsKBAVRUUVOQFJPWwlXBk8XXE5SQQoEAAZKFBAEFUBRRBdvWUFDOVUNDg9cURVZEl1ZQ0tEBxARUEdDBlQRGhUUUxMUAUZAaBZDVkRoD1JAW1MFAQRRCAEaFQVZDQoNUEcZPFdSGEQPTAdDXgcCSh4=","applicationID":"3343327","errorBeacon":"bam.nr-data.net","applicationTime":720}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+      <title>
+       ASD.1x Progress | edX
+      </title>
+  
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://prod-edxapp.edx-cdn.org/static/edx.org/images/favicon.9028de6ff678.ico" />
+
+  
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-vendor.7efc5b554ed0.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-main-v1.4b5a1cfed8f8.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-main_vendor.3c3c9a2604d6.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-application.0e3fae472a20.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/commons.c346f2c8b23720ce4b2f.3408efcd45ca.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "https://prod\u002Dedxapp.edx\u002Dcdn.org/static/";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/lms/js/require-config.38226099c6ad.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.8f15a0109b05',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.43ec67e44612',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.6c1b60b7bf35',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.be68acdff619',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.bc5a1361d5f5',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-course-vendor.e7ffa8d48d4a.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-course.075ff2622d63.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "andreapt82", "enrollment_mode": null, "upgrade_link": null, "user_id": 7053282, "course_start": "2016-09-01T08:00:00+00:00", "course_end": "2016-10-27T08:00:00+00:00", "schedule_start": null, "upgrade_deadline": null, "course_key_fields": {"org": "ETHx", "run": "2016_T1", "course": "ASD.1x"}, "partition_groups": {"Feature-based Enrollments": [2, "Full-access Users"]}, "has_non_audit_enrollments": false, "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:ETHx+ASD.1x+2016_T1", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": null, "audit_access_deadline": null, "email": "andreapt82@gmail.com", "program_key_fields": null}
+</script>
+
+  
+
+  
+
+<script src=//cdn.optimizely.com/js/1743970571.js></script>
+
+  
+
+
+<!-- begin Segment -->
+<script type="text/javascript">
+  // Asynchronously load Segment's analytics.js library
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("8fncv13bt5");
+  analytics.page();
+  }}();
+  // Note: user tracking moved to segment-io-footer.html
+</script>
+<!-- end Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+    <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+  <meta name="openedx-release-line" content="master" />
+
+
+
+
+    <script type="text/javascript">
+        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+        branch.init('key_live_mfvq10qtrE7sjWpz2NHVNlnfrqamuY8u');
+    </script>
+
+</head>
+
+<body class="ltr view-in-course view-progress lang_en">
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim">
+        
+    
+
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CookiePolicyBanner.8e13c51d6eb914299431.d3003878f8af.js" ></script>
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/ReactRenderer.b7508f63c3f1d4be7447.770058308d0f.js" ></script>
+
+    <div id="cookie-policy-banner"></div>
+    <script type="text/javascript">
+      var c;
+      try { c = CookiePolicyBanner; } catch (e) { c = null; }
+      new ReactRenderer({
+        component: c,
+        selector: '#cookie-policy-banner',
+        componentName: 'CookiePolicyBanner',
+        props: {}
+      });
+    </script>
+
+    <div class="main-header">
+        
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="/dashboard">
+    
+    <img  class="logo" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png" alt="edX Home Page"/>
+    
+  </a>
+    <div class="course-header">
+      <span class="provider">ETHx:</span>
+      <span class="course-number">ASD.1x</span>
+      
+      <span class="course-name">Agile Software Development</span>
+    </div>
+</h1>
+
+        <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+            
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+
+  </div>
+  <div class="secondary">
+    <div class="mobile-nav-item hidden-mobile nav-item">
+        <a class="help-link" href="https://support.edx.org" rel="noopener" target="_blank">Help</a>
+    </div>
+    
+
+
+
+
+
+
+<div class="nav-item hidden-mobile">
+    <a href="/dashboard" class="menu-title">
+        <img class="user-image-frame" src="https://profile-images.edx-cdn.org/prod/fcce2a1f9ebe32777cf206972fe2e809_50.jpg?v=1455659660" alt="">
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username">andreapt82</span>
+    </a>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown" tabindex="-1">
+    <div class="toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://courses.edx.org/courses/course-v1:AWS+OTP-AWSD2+1T2018/jump_to/block-v1:AWS+OTP-AWSD2+1T2018+type@video+block@fcc07f5870e44d268b4831be5a2c6438" role="menuitem">Resume your last course</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/dashboard" role="menuitem">Dashboard</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/u/andreapt82" role="menuitem">Profile</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/account/settings" role="menuitem">Account</a></div>
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://orders.edx.org/orders" role="menuitem">Order History</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/logout" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+
+  </div>
+</div>
+
+    </div>
+    <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" rel="noopener" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" rel="noopener" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div class="marketing-hero"></div>
+
+    <div class="content-wrapper main-container" id="content" dir="ltr">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <nav class="progress wrapper-course-material" aria-label="Course Material">
+            <div class="course-material">
+                
+                <ol class="tabs course-tabs">
+                    
+
+
+
+
+
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/course/" class="">
+  Course
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/3b23579e6bc743068f9f8545cfea60fd/" class="">
+  Grading Policy
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/5871a63d0cbd4182ae15a2eb8ed65cde/" class="">
+  Course Syllabus
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/381adc9963e843ed85dd2f81dcc9a772/" class="">
+  Bibliography
+  </a>
+  </li>
+
+                    
+                </ol>
+            </div>
+        </nav>
+
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <div class="container">
+        <div class="profile-wrapper">
+            <section class="course-info" id="course-info-progress"
+                lang="en"
+              >
+                <h2 class="hd hd-2 progress-certificates-title">
+                    Course Progress for &#39;andreapt82&#39; (andreapt82@gmail.com)
+                </h2>
+                <div class="wrapper-msg wrapper-auto-cert">
+                    <div id="errors-info" class="errors-info"></div>
+                    
+                        <div class="auto-cert-message" id="course-success">
+                            <div class="has-actions">
+                                
+                                <div class="msg-content">
+                                    <h4 class="hd hd-4 title">Your enrollment: Audit track</h4>
+                                    <p class="copy">You are enrolled in the audit track for this course. The audit track does not include a certificate.</p>
+                                </div>
+                                <div class="msg-actions">
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+
+                <div class="grade-detail-graph" id="grade-detail-graph"></div>
+
+
+                <section class="chapters">
+                    <h2 class="sr">Details for each chapter</h2>
+                        <section aria-labelledby="chapter_0">
+                            <h3 class="hd hd-3" id="chapter_0">Week 1</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/a690a4e7f79f4e858d69a4a51dddb6d6/b610c913252d4ef8a3ea414a4731d5a2/">
+                                                1.1 Course Introduction
+                                            </a>
+                                        </h4>
+                                        <p>
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                        <p class="no-scores">No problem scores in this section</p>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/a690a4e7f79f4e858d69a4a51dddb6d6/e5c7ac0e0db8477db333cc6673861664/">
+                                                1.2 Context
+                                                <span class="sr">
+                                                    8 of 8 possible points
+                                                </span>
+                                            </a>
+                                            <span> (8/8) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/a690a4e7f79f4e858d69a4a51dddb6d6/6b527c9235424343a103408d08c05c36/">
+                                                1.3. Context Quiz
+                                                <span class="sr">
+                                                    7 of 8 possible points
+                                                </span>
+                                            </a>
+                                            <span> (7/8) 88%</span>
+                                        </h4>
+                                        <p>
+                                                Homework
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>0/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                        <section aria-labelledby="chapter_1">
+                            <h3 class="hd hd-3" id="chapter_1">Week 2</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/24945c1fba4843729d9983bf7eb1b36f/5dc4aa3d74a34958a5c4dfbcc26fc7b2/">
+                                                2.1 Principles
+                                                <span class="sr">
+                                                    10 of 10 possible points
+                                                </span>
+                                            </a>
+                                            <span> (10/10) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/24945c1fba4843729d9983bf7eb1b36f/64d64a7cb172430c9d788797356876e0/">
+                                                2.2 Principles Quiz
+                                                <span class="sr">
+                                                    26 of 26 possible points
+                                                </span>
+                                            </a>
+                                            <span> (26/26) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Homework
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>8/8</dd>
+                                              <dd>7/7</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>2/2</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                        <section aria-labelledby="chapter_2">
+                            <h3 class="hd hd-3" id="chapter_2">Week 3</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/e2420f7bef944452bc6d936e7aca6cf7/71bae43361bd42e5933f227f5a0942a0/">
+                                                3.1 Roles
+                                                <span class="sr">
+                                                    6 of 6 possible points
+                                                </span>
+                                            </a>
+                                            <span> (6/6) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/e2420f7bef944452bc6d936e7aca6cf7/4a62ce2d5a26422c8e7e484c116f0167/">
+                                                3.2 Roles Quiz
+                                                <span class="sr">
+                                                    11 of 11 possible points
+                                                </span>
+                                            </a>
+                                            <span> (11/11) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Homework
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>2/2</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                        <section aria-labelledby="chapter_3">
+                            <h3 class="hd hd-3" id="chapter_3">Week 4</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/92d0365c261e4ee4b4c7706eeaeac775/aaf8801cf6fa4f729d8b210b3754ac37/">
+                                                4.1 Practices
+                                                <span class="sr">
+                                                    11 of 11 possible points
+                                                </span>
+                                            </a>
+                                            <span> (11/11) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>2/2</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/92d0365c261e4ee4b4c7706eeaeac775/6ab43a0ef7754d27a8b76dd79752b070/">
+                                                4.2 Practices Quiz
+                                                <span class="sr">
+                                                    15 of 15 possible points
+                                                </span>
+                                            </a>
+                                            <span> (15/15) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Homework
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>5/5</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                        <section aria-labelledby="chapter_4">
+                            <h3 class="hd hd-3" id="chapter_4">Week 5</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/ae7b434c55a445708009cac476321cab/95024710514f4f629d0462955394444a/">
+                                                5.1 Artifacts
+                                                <span class="sr">
+                                                    2 of 2 possible points
+                                                </span>
+                                            </a>
+                                            <span> (2/2) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/ae7b434c55a445708009cac476321cab/803dbb9a46964989b67c75966406aa5f/">
+                                                5.2 Assessment of Agile methods
+                                                <span class="sr">
+                                                    2 of 2 possible points
+                                                </span>
+                                            </a>
+                                            <span> (2/2) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Quick Questions
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/ae7b434c55a445708009cac476321cab/d1121595ff4142c99a65274d12158146/">
+                                                5.3 Artifacts and Assessment Quiz
+                                                <span class="sr">
+                                                    12 of 12 possible points
+                                                </span>
+                                            </a>
+                                            <span> (12/12) 100%</span>
+                                        </h4>
+                                        <p>
+                                                Homework
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                        <section aria-labelledby="chapter_5">
+                            <h3 class="hd hd-3" id="chapter_5">Week 6</h3>
+                            <div class="sections">
+                                    <div>
+                                        
+                                        <h4 class="hd hd-4">
+                                            <a href="/courses/course-v1:ETHx+ASD.1x+2016_T1/courseware/e75ae514351c4c09b2cfc8e960e8c936/3fbf81e234b144329f8d8cc473c03621/">
+                                                Final exam
+                                                <span class="sr">
+                                                    18 of 22 possible points
+                                                </span>
+                                            </a>
+                                            <span> (18/22) 82%</span>
+                                        </h4>
+                                        <p>
+                                                Final Exam
+                                        </p>
+                                        <p class="override-notice">
+                                        </p>
+                                          <dl class="scores">
+                                              <dt class="hd hd-6">Problem Scores: </dt>
+                                              <dd>1/1</dd>
+                                              <dd>0/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>0/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>0/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>0/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                              <dd>1/1</dd>
+                                          </dl>
+                                    </div>
+                            </div>
+                        </section>
+                </section>
+            </section>
+        </div>
+    </div>
+</main>
+
+  
+  <script type="text/javascript">
+    (function (require) {
+        require(['https://prod\u002Dedxapp.edx\u002Dcdn.org/static/js/dateutil_factory.be68acdff619.js?raw'], function () {
+          require(['js/dateutil_factory'], function (DateUtilFactory) {
+            
+    DateUtilFactory.transform(iterationKey=".localized-datetime");
+
+          });
+        });
+    }).call(this, require || RequireJS.require);
+  </script>
+
+
+      
+    </div>
+
+        
+
+
+
+
+
+
+
+<footer id="footer-edx-v3" role="contentinfo" aria-label="Page Footer"
+>
+
+<div class="container">
+    <div class="row main-row"><!-- row -->
+        <div class="col-xl-2 col-lg-12 col-md-2 col-sm-8 col-xs-10 column-1 flex-column column-styles">
+            <div class="row">
+                <div class="col-12 column-2-2 column-styles">
+                <div class="edx-footer-logo">
+                    <a href="https://www.edx.org">
+                        <img alt="edX Home Page" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo-footer.fde85fe42f6b.png">
+                    </a>
+                </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xl-6 col-lg-8 col-md-9 col-sm-5 col-xs-12 column-2 flex-column column-styles">
+             <div class="row full-height">
+
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 column-2-1 col-xs-12 first-div-border column-styles ">
+                    <div class="row full-height">
+                        <div class="ml-xl-0 col-lg-10 ml-lg-auto col-md-12 column-2-2 col-sm-10 full-height column-styles">
+                              <h2 class="heading">edX</h2>
+                                  <ul class="list-unstyled clear-margins  ">
+                                      <li>
+                                          <a href="https://www.edx.org/about-us">About</a>
+                                      </li>
+                                      <li>
+                                          <a href="https://business.edx.org/?utm_campaign=edX.org+Referral&amp;utm_medium=Footer&amp;utm_source=edX.org">edX for Business</a>
+                                      </li>
+                                  </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 second-div-border column-styles ">
+                        <div class="row full-height">
+                            <div class="col-lg-12 col-md-12 col-sm-10 column-2-2 full-height column-styles">
+                                  <h2 class="heading">Legal</h2>
+                                    <ul class="list-unstyled clear-margins  ">
+                                        <li>
+                                          <a href="https://www.edx.org/edx-terms-service">Terms of Service &amp; Honor Code</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/edx-privacy-policy">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/accessibility">Accessibility Policy</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                          </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 third-div-border column-styles">
+                      <div class="row full-height">
+                        <div class="col-lg-12 col-md-12 col-sm-10 full-height column-2-2 column-styles">
+                              <h2 class="heading">Connect</h2>
+                              <ul class="list-unstyled clear-margins  ">
+                                <li>
+                                  <a href="https://www.edx.org/blog">Blog</a>
+                                </li>
+                                <li>
+                                  <a href="https://courses.edx.org/support/contact_us">Contact Us</a>
+                                </li>
+                                <li>
+                                  <a href="https://support.edx.org">Help Center</a>
+                                </li>
+                              </ul>
+                        </div>
+                      </div>
+                 </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-9 ml-md-auto col-sm-7 column-3 flex-column fourth-div-border column-styles">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column-3-1 social-app-links-div column-styles ml-auto">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 column-3-2 column-styles">
+                             <ul class="list-inline list-unstyled social">
+                                    <li>
+                                        <a href="http://www.facebook.com/EdxOnline" class="social-links external" title="Facebook" rel="noreferrer">
+                                            <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
+                                            <span class="sr">Like edX on Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/edXOnline" class="social-links external" title="Twitter" rel="noreferrer">
+                                            <span class="icon fa fa-twitter-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/user/edxonline" class="social-links external" title="Youtube" rel="noreferrer">
+                                            <span class="icon fa fa-youtube-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX YouTube channel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.linkedin.com/company/edx" class="social-links external" title="LinkedIn" rel="noreferrer">
+                                            <span class="icon fa fa-linkedin-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://plus.google.com/+edXOnline" class="social-links external" title="Google+" rel="noreferrer">
+                                            <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Google+</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.reddit.com/r/edx" class="social-links external" title="Reddit" rel="noreferrer">
+                                            <span class="icon fa fa-reddit-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX subreddit</span>
+                                        </a>
+                                    </li>
+                             </ul>
+                            <ul class="list-inline list-unstyled app-links">
+                                    <li>
+                                        <a href="https://itunes.apple.com/us/app/edx/id945480667?mt=8" class="app-link external">
+                                            <img alt="Download the edX mobile app from the Apple App Store" src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://play.google.com/store/apps/details?id=org.edx.mobile" class="app-link external">
+                                            <img alt="Download the edX mobile app from Google Play" src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png">
+                                        </a>
+                                    </li>
+                            </ul>
+                              <!--"EdX, Open edX, and MicroMasters are trademarks of edX Inc. registered in the U.S. and other countries-->
+                              <p class="copyright">© 2012–2019 edX Inc. 
+                                  <br/>
+                                  edX, Open edX, and MicroMasters are registered trademarks of edX Inc. 
+                                     | 深圳市恒宇博科技有限公司
+                                    <a href="http://www.beian.miit.gov.cn">
+                                         粤ICP备17044299号-2
+                                    </a>
+                              </p>
+                        </div>
+                  </div>
+                </div>
+
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</footer>
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-footer-edx.32498a91fc82.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  </div>
+
+  
+  
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.stack.e9af2bfe13e7.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.symbol.df5e55902225.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/courseware/certificates_api.f1c495eb43e4.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/courseware/credit_progress.58db53fa6c9d.js"></script>
+<script>
+    
+
+
+$(function () {
+  function showTooltip(x, y, contents) {
+      $("#tooltip").remove();
+      var $tooltip_div = $('<div id="tooltip"></div>').css({
+          position: 'absolute',
+          display: 'none',
+          top: y + 5,
+          left: x + 15,
+          border: '1px solid #000',
+          padding: '4px 6px',
+          color: '#fff',
+          'background-color': '#222',
+          opacity: 0.90
+      });
+
+      edx.HtmlUtils.setHtml(
+          $tooltip_div,
+          edx.HtmlUtils.HTML(contents)
+      );
+      
+      edx.HtmlUtils.append(
+          $('body'),
+          edx.HtmlUtils.HTML($tooltip_div)
+      );
+      
+      $('#tooltip').fadeIn(200);
+  }
+  /* -------------------------------- Grade detail bars -------------------------------- */
+    
+  
+  
+  var series = [{"color": "#600101", "data": [[7.5, 1.0], [8.5, 1.0], [9.5, 1.0], [10.5, 1.0], [11.5, 1.0], [12.5, 1.0], [13.75, 1.0]], "label": "Quick Questions"}, {"color": "#666666", "data": [[15.25, 0.82]], "label": "Final Exam"}, {"color": "#b72121", "data": [[1, 0.88], [2, 1.0], [3, 1.0], [4, 1.0], [5, 1.0], [6.25, 1.0]], "label": "Homework"}, {"color": "#b72121", "data": [[16.75, 0.4]], "label": "Homework-grade_breakdown"}, {"color": "#600101", "data": [[16.75, 0.2]], "label": "Quick Questions-grade_breakdown"}, {"color": "#666666", "data": [[16.75, 0.328]], "label": "Final Exam-grade_breakdown"}];
+  var ticks = [[1, "HW 01"], [2, "HW 02"], [3, "HW 03"], [4, "HW 04"], [5, "HW 05"], [6.25, "HW Avg"], [7.5, "QQ 01"], [8.5, "QQ 02"], [9.5, "QQ 03"], [10.5, "QQ 04"], [11.5, "QQ 05"], [12.5, "QQ 06"], [13.75, "QQ Avg"], [15.25, "Final"], [16.75, "Total"]];
+  var bottomTicks = [];
+  var detail_tooltips = {"Homework-grade_breakdown": ["Homework = 40.00% of a possible 40.00%"], "Final Exam": ["Final Exam = 82%"], "Dropped Scores": ["The lowest 1 Homework scores are dropped."], "Quick Questions": ["Quick Questions 1 - 1.2 Context - 100% (8/8)", "Quick Questions 2 - 2.1 Principles - 100% (10/10)", "Quick Questions 3 - 3.1 Roles - 100% (6/6)", "Quick Questions 4 - 4.1 Practices - 100% (11/11)", "Quick Questions 5 - 5.1 Artifacts - 100% (2/2)", "Quick Questions 6 - 5.2 Assessment of Agile methods - 100% (2/2)", "Quick Questions Average = 100%"], "Final Exam-grade_breakdown": ["Final Exam = 32.80% of a possible 40.00%"], "Quick Questions-grade_breakdown": ["Quick Questions = 20.00% of a possible 20.00%"], "Homework": ["Homework 1 - 1.3. Context Quiz - 88% (7/8)", "Homework 2 - 2.2 Principles Quiz - 100% (26/26)", "Homework 3 - 3.2 Roles Quiz - 100% (11/11)", "Homework 4 - 4.2 Practices Quiz - 100% (15/15)", "Homework 5 - 5.3 Artifacts and Assessment Quiz - 100% (12/12)", "Homework Average = 100%"]};
+  var droppedScores = [[1, 0.05]];
+  var grade_cutoff_ticks = [[1, "100%"], [0, "0%"], [0.6, "Pass 60%"]]
+  
+  var yAxisTooltips={};
+
+    /*
+    series looks like:
+    [
+        {
+            color: "#600101",
+            label: "Homework",
+            data: [[1, 0.06666666666666667], [2, 1], [3.25, .53]]
+        },
+        ...
+    ]
+
+    detail_tooltips looks like:
+    {
+        "Dropped Scores": [0: "The lowest 1...:],
+        "Homework": [
+            0: "Homework 1 -- Homework -- Question Styles 7% (1/15)",
+            1: "Homework 2 -- Homework -- Get Social 100% (1/1)",
+            2: "Homework Average = 53%"
+        ],
+        ...
+    }
+    */
+
+  // loop through the series and extract the matching tick and the series label
+  for (var seriesIndex = 0; seriesIndex < series.length; seriesIndex++) {
+      for (var dataIndex = 0; dataIndex < series[seriesIndex]['data'].length; dataIndex++) {
+          var tickIndex = series[seriesIndex]['data'][dataIndex][0];
+          // There may be more than one detail tooltip for a given tickIndex. If so,
+          // push the new tooltip on the existing list.
+          if (tickIndex in yAxisTooltips) {
+              yAxisTooltips[tickIndex].push(detail_tooltips[series[seriesIndex]['label']][dataIndex]);
+          } else {
+              yAxisTooltips[tickIndex] = [detail_tooltips[series[seriesIndex]['label']][dataIndex]];
+          }
+          // If this item was a dropped score, add the tooltip message about that.
+          for (var droppedIndex = 0; droppedIndex < droppedScores.length; droppedIndex++) {
+              if (tickIndex === droppedScores[droppedIndex][0]) {
+                  yAxisTooltips[tickIndex].push(detail_tooltips["Dropped Scores"][droppedIndex]);
+              }
+          }
+      }
+  }
+
+  // hide the vertical axis since they are audibly lacking context
+  for (var i = 0; i < grade_cutoff_ticks.length; i++) {
+      grade_cutoff_ticks[i][1] = edx.HtmlUtils.joinHtml(
+          edx.HtmlUtils.HTML('<span aria-hidden="true">'),
+          grade_cutoff_ticks[i][1],
+          edx.HtmlUtils.HTML('</span>')
+      ).text;
+  }
+    
+  //Always be sure that one series has the xaxis set to 2, or the second xaxis labels won't show up
+  series.push( {label: 'Dropped Scores', data: droppedScores, points: {symbol: "cross", show: true, radius: 3}, bars: {show: false}, color: "#333"} );
+  
+  // Allow for arbitrary grade markers e.g. ['A', 'B', 'C'], ['Pass'], etc.
+  var ascending_grades = grade_cutoff_ticks.map(function (el) { return el[0]; }); // Percentage point (in decimal) of each grade cutoff
+  ascending_grades.sort();
+
+  var colors = ['#f3f3f3', '#e9e9e9', '#ddd'];
+  var markings = [];
+  for(var i=1; i<ascending_grades.length-1; i++) // Skip the i=0 marking, which starts from 0%
+    markings.push({yaxis: {from: ascending_grades[i], to: ascending_grades[i+1]}, color: colors[(i-1) % colors.length]});
+
+  var options = {
+    series: {
+        stack: true,
+        lines: {
+            show: false,
+            steps: false
+        },
+        bars: {
+            show: true,
+            barWidth: 0.8,
+            align: 'center',
+            lineWidth: 0,
+            fill: .8
+        }
+    },
+    xaxis: {
+        tickLength: 0,
+        min: 0.0,
+        max: 17.75,
+        ticks: function() {
+            for (var i = 0; i < ticks.length; i++) {
+                var tickLabel = edx.HtmlUtils.joinHtml(
+                    // The very last tick will be for the total, and it usually is composed of a number of different
+                    // grading types. To help clarify, do NOT make the label ("Total") aria-hidden in that case.
+                    edx.HtmlUtils.HTML(i < ticks.length - 1 ? '<span aria-hidden="true">' : '<span>'),
+                    ticks[i][1],
+                    edx.HtmlUtils.HTML('</span>')
+                );
+                var elementTooltips = yAxisTooltips[ticks[i][0]];
+                if (elementTooltips) {
+                    for (var tooltipIndex = 0; tooltipIndex < elementTooltips.length; tooltipIndex++) {
+                        tickLabel = edx.HtmlUtils.joinHtml(
+                            tickLabel,
+                            edx.HtmlUtils.HTML('<span class="sr">'),
+                            elementTooltips[tooltipIndex],
+                            edx.HtmlUtils.HTML('<br></span>')
+                        );
+                    }
+                }
+                ticks[i][1] = tickLabel;
+            }
+            return ticks;
+        },
+        labelAngle: 90
+    },
+    yaxis: {
+        ticks: grade_cutoff_ticks,
+        min: 0.0,
+        max: 1.0,
+        labelWidth: 100
+    },
+    grid: {
+        hoverable: true,
+        clickable: true,
+        borderWidth: 1,
+        markings: markings
+    },
+    legend: {
+        show: false
+    }
+  };
+  
+  var $grade_detail_graph = $("#grade\u002Ddetail\u002Dgraph");
+  if ($grade_detail_graph.length > 0) {
+    var plot = $.plot($grade_detail_graph, series, options);
+    
+      var o = plot.pointOffset(
+          {x: 16.75 , y: 0.93}
+      );
+
+      edx.HtmlUtils.append(
+          $grade_detail_graph,
+          edx.HtmlUtils.joinHtml(
+              // xss-lint: disable=javascript-concat-html
+              edx.HtmlUtils.HTML('<div class="overallGrade" style="position:absolute;left:' + (o.left - 12) + 'px;top:' + (o.top - 20) + 'px">'),
+              edx.HtmlUtils.HTML('<span class=sr>'),
+              gettext('Overall Score'),
+              edx.HtmlUtils.HTML('<br></span>'),
+              '93%',
+              edx.HtmlUtils.HTML('</div>')
+          )
+      );
+
+
+    $grade_detail_graph.find('.xAxis .tickLabel').attr('tabindex', '0').focus(function(event) {
+        var $target = $(event.target), srElements = $target.find('.sr'), srText="", i;
+        if (srElements.length > 0) {
+            for (i = 0; i < srElements.length; i++) {
+                srText += srElements[i].innerHTML;
+            }
+            // Position the tooltip slightly above the tick label.
+            showTooltip($target.offset().left - 70, $target.offset().top - 120, srText);
+        }
+    });
+
+    $grade_detail_graph.focusout(function(){
+        $("#tooltip").remove();
+    });
+  }
+  
+      
+  var previousPoint = null;
+  $grade_detail_graph.bind("plothover", function (event, pos, item) {
+    if (item) {
+      if (previousPoint != (item.dataIndex, item.seriesIndex)) {
+        previousPoint = (item.dataIndex, item.seriesIndex);
+            
+        if (item.series.label in detail_tooltips) {
+          var series_tooltips = detail_tooltips[item.series.label];
+          if (item.dataIndex < series_tooltips.length) {
+            showTooltip(item.pageX, item.pageY, series_tooltips[item.dataIndex]);
+          }
+        }
+
+      }
+    } else {
+      $("#tooltip").remove();
+      previousPoint = null;            
+    }
+  });
+});
+
+</script>
+
+
+  
+
+
+    <!-- begin segment footer -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            analytics.identify(
+                "7053282",
+                {
+                    email: "andreapt82@gmail.com",
+                    username: "andreapt82"
+                },
+                {
+                    integrations: {
+                        // Disable MailChimp because we don't want to update the user's email
+                        // and username in MailChimp on every page load. We only need to capture
+                        // this data on registration/activation.
+                        MailChimp: false
+                    }
+                }
+            );
+        });
+    </script>
+    <!-- end segment footer -->
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/header/header.309a1243e175.js"></script>
+  
+</body>
+</html>
+
+

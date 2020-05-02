@@ -1,0 +1,470 @@
+<html>
+    <head>
+		<meta charset="utf-8">
+		<script src="jquery-3.4.1.min.js"></script>
+
+		<style>
+			body {
+				margin:0;
+				padding:0;
+				background-color: #CCC;
+			}
+			
+			#info-geral {
+			    margin-top: 57px;
+			}
+
+			#placar {
+			    height: 40px;
+			    font-size: 16px;
+			    position: absolute;
+			    margin-top: 19px;
+			}	
+		    
+			#bola {
+				height: 20px;
+				width: 20px;
+				background-color: #0000ff;
+				border-radius: 50%;
+				display: inline-block;
+				position: absolute;
+				top: 400px;
+				left: 390px;
+			}
+			
+			#campo {
+				background-color: #00FF00;
+				width: 800px;
+				height: 600px;
+				position: absolute;
+				top: 139px;
+			}
+			
+			.tab {
+				position: absolute;
+				background-color: #00F;
+				width: 10px;
+				height: 100px;
+				top: 385px;	
+			}
+			
+			#tab1 {
+				left: 0px;
+			}
+			
+			#tab2 {
+				left: 790px;
+			}
+
+			#linhaSuperior {
+				left: 0px;
+				top: 135px;			
+			}
+			
+			#linhaInferior {
+				left: 0px;
+				top: 736px;
+			}
+			
+			.linhaHorizontal {
+				width: 800px;
+				height: 4px;	
+			}
+			
+			.linhaVertical {
+				width: 4px;
+				height: 200px;				
+			}
+			
+			.linhaVerticalSuperior {
+				top: 135px;
+			}
+			
+			.linhaVerticalInferior {
+				top: 535px;
+			}
+			
+			.linhaEsquerda {
+			    left: 0px;	
+			}
+			
+			.linhaDireita {
+		        left: 796px;
+		    }
+			
+			.linha {
+				background-color: #FFF;
+				position: absolute;	
+			}
+			
+			#controles {
+			    width: 400px;
+			}
+			
+			.configuracao-cor {
+			    margin-left: 10px;
+			    float: left;
+			}
+			
+			#primeira-configuracao-cor {
+				margin: 0px;
+			}
+		</style>
+
+		<script>
+			$(function() {
+				var posicoes;
+				var raioBola = 30;
+				numeroAleatorio = [0,0];
+				var sinalHorizontal = "+";
+				var sinalVertical = "+";
+				var numeroPressionamentos = 0;
+				var intervalo;
+				
+				reiniciarRandomizacao();
+
+				if (navigator.userAgent == undefined || navigator.userAgent.indexOf("IE") > -1) {
+				    if (confirm("Use um namvegador mais novo. Quer ser direcionado para o download do Chrome?")) {
+				        window.location.href = "https://www.google.com/intl/pt-BR/chrome/";
+				    }
+				}
+
+				$("#cor-campo").change(
+				    function() {
+						$("#campo").css("background-color", $("#cor-campo").val())
+					}
+				);
+
+				$("#cor-tabs").change(
+				    function() {
+						$(".tab").css("background-color", $("#cor-tabs").val())
+					}
+				);
+
+				$("#cor-extremos").change(
+				    function() {
+						$(".linha").css("background-color", $("#cor-extremos").val())
+					}
+				);
+
+				$("#cor-bola").change(
+				    function() {
+						$("#bola").css("background-color", $("#cor-bola").val())
+					}
+				);
+				
+				function converterValor(valor) {
+				    return - valor + 21; 	
+				}
+				
+				function mudarEstadoInicio() {
+			        numeroPressionamentos++;
+			        			        
+			        if (numeroPressionamentos % 2 == 1) {
+			            reiniciarRandomizacao();
+
+			            intervalo = setInterval(
+				            andarDaBola,
+					        converterValor($("#velocidade").val())
+				        );
+				        
+				        $("#botaoInicio").text("Parar");
+				    } else {
+						clearInterval(intervalo);
+					    
+				        colocarBolaNoCentro();
+				        	    	
+						$("#botaoInicio").text("Iniciar");
+					}	
+						    
+			    }
+			    
+				// movimentação
+				$('#controles').keydown (
+				    function(event) {
+						$('#controles').val("");
+							
+						if (event.which == 87 && $("#tab1").offset().top > 144) {
+					        moverTab1ParaCima();
+					    } else if (event.which == 83 && $("#tab1").offset().top < 644) {
+							moverTab1ParaBaixo();
+					    } else if (event.which == 38 && $("#tab2").offset().top > 144) {
+							moverTab2ParaCima();
+					    } else if (event.which == 40 && $("#tab2").offset().top < 644) {
+							moverTab2ParaBaixo();
+					    }
+					}
+				);
+
+				$("#botao-cima-jogador-1").click(
+				    function() {
+						if ($("#tab1").offset().top > 144) {
+						    moverTab1ParaCima();
+						}
+					}
+				);
+				
+				$("#botao-cima-jogador-1").on(
+				    'touchstart',
+				    function() {
+						if ($("#tab1").offset().top > 144) {
+						    moverTab1ParaCima();
+						}
+					}
+				);
+
+				$("#botao-baixo-jogador-1").click(
+				    function() {
+				        if ($("#tab1").offset().top < 644) {
+				            moverTab1ParaBaixo();
+						}
+					}
+				);	
+
+				$("#botao-baixo-jogador-1").on(
+				    'touchstart',
+				    function() {
+				        if ($("#tab1").offset().top < 644) {
+				            moverTab1ParaBaixo();
+						}
+					}
+				);	
+
+				$("#botao-cima-jogador-2").click(
+				    function() {
+						if ($("#tab2").offset().top > 144) {
+						    moverTab2ParaCima();
+						}
+					}
+				);
+
+				$("#botao-cima-jogador-2").on(
+				    'touchstart',
+				    function() {
+						if ($("#tab2").offset().top > 144) {
+						    moverTab2ParaCima();
+						}
+					}
+				);
+
+				$("#botao-baixo-jogador-2").click(
+				    function() {
+				        if ($("#tab2").offset().top < 644) {
+				            moverTab2ParaBaixo();
+						}
+					}
+				);	
+
+				$("#botao-baixo-jogador-2").on(
+				    'touchstart',
+				    function() {
+				        if ($("#tab2").offset().top < 644) {
+				            moverTab2ParaBaixo();
+						}
+					}
+				);	
+				
+				function moverTab1ParaCima() {
+					$("#tab1").offset(
+					    {top: $("#tab1").offset().top - 10}
+					);
+				}
+				
+				function moverTab1ParaBaixo() {
+					$("#tab1").offset(
+					    {top: $("#tab1").offset().top + 10}
+					);
+				}
+				
+				function moverTab2ParaCima() {
+				    $("#tab2").offset(
+				         {top: $("#tab2").offset().top - 10}
+					);
+				}
+				
+				function moverTab2ParaBaixo() {
+					$("#tab2").offset(
+					    {top: $("#tab2").offset().top + 10}
+					);
+				}
+											
+				function andarDaBola() {
+					if (			    
+					       (
+							  	   $("#bola").position().top > $("#tab1").position().top + 100
+						       || 
+								   $("#bola").position().top < $("#tab1").position().top
+					       ) 
+					       &&
+					       (
+					           parseInt($("#bola").position().top) >= 335 && 
+					           parseInt($("#bola").position().top) < 535 && 
+					           parseInt($("#bola").position().left) <= 0
+					       )
+					) {
+						marcarGolParaOJogador(2);
+						reiniciarRandomizacao();
+					} else if (
+					    (
+								$("#bola").position().top > $("#tab2").position().top + 100
+							|| 
+								$("#bola").position().top < $("#tab2").position().top
+					    ) 
+					    &&
+					    (
+					        parseInt($("#bola").position().top) >= 335 && 
+					        parseInt($("#bola").position().top) < 535 && 
+					        parseInt($("#bola").position().left) >= 790
+					    )) 
+					{	      
+						    marcarGolParaOJogador(1);
+						    reiniciarRandomizacao();     
+					}
+					
+					if (
+							parseInt($("#bola").position().left) >= 790 || 
+							parseInt($("#bola").position().left) <= 0
+						) {
+							sinalHorizontal = trocarSinais(sinalHorizontal);
+					}
+					
+					if (sinalHorizontal == "+") {
+						$("#bola").css("left",  $("#bola").position().left + numeroAleatorio[0]);	 
+					} else {
+						$("#bola").css("left",  $("#bola").position().left - numeroAleatorio[0]);						
+					}
+
+					if (
+							parseInt($("#bola").position().top) >= 740 ||
+							parseInt($("#bola").position().top) <= 140
+						) {
+							sinalVertical = trocarSinais(sinalVertical);
+					}
+					
+					
+					if (sinalVertical == "+") {
+						$("#bola").css("top", $("#bola").position().top + numeroAleatorio[1]);	 
+					} else {
+						$("#bola").css("top", $("#bola").position().top - numeroAleatorio[1]);
+					}
+				}
+				
+				function trocarSinais(sinal) {
+					if (sinal == "+") {
+						return "-";
+					} else if (sinal == "-") {
+						return "+";
+					} 		
+				}
+				
+				function marcarGolParaOJogador(numeroJogador) {
+					$("#jogador" + numeroJogador + " .placar").text(parseInt($("#jogador" + numeroJogador + " .placar").text()) + 1); 
+					$("#somGol")[0].play();
+					
+					colocarBolaNoCentro();
+				}
+				
+				$("#botaoInicio").click(
+				    function(){
+					    mudarEstadoInicio();
+					    resetarPlacar();
+				    }
+				);
+				
+				function colocarBolaNoCentro() {
+					$("#bola").css(
+						{
+							'height': '20px',
+							'width': '20px',							
+							'border-radius': '50%',
+							'display': 'inline-block',
+							'position': 'absolute',
+							'top': '370px',
+							'left': '390px',
+						}
+					);			
+			    }
+			    
+			    function resetarPlacar() {
+					$("#jogador1 .placar").text("0");
+					$("#jogador2 .placar").text("0");
+				}
+			});	
+			
+			function reiniciarRandomizacao() {
+				numeroAleatorio = [parseInt(Math.random()) * 8, parseInt(Math.random() * 8)];
+				
+				while(numeroAleatorio[0] == 0 || numeroAleatorio[1] == 0) {
+					numeroAleatorio = [parseInt(Math.random() * 8), parseInt(Math.random() * 8)];	
+				}
+			}
+		</script>
+    </head>
+    <body>
+         <div>
+		    Velocidade:
+		    <input name="velocidade" id="velocidade" type="range" value="10" min="1" max="20" step="1" />
+		</div>
+		<div class="configuracao-cor"	id="primeira-configuracao-cor">
+		    <label>Cor do campo</label>
+		    <input value="#00FF00" type="color" name="cor-campo" id="cor-campo" />
+		</div>
+		<div class="configuracao-cor">
+		    <label>Cor dos extremos</label>
+		    <input value="#FFFFFF" type="color" name="cor-extremos" id="cor-extremos" />
+		</div>
+		<div class="configuracao-cor">
+		    <label>Cor da bola</label>
+		    <input value="#0000FF" type="color" name="cor-bola" id="cor-bola" />
+		</div>
+		<div class="configuracao-cor">
+		    <label>Cor das tabs ou raquetes</label>
+		    <input value="#0000FF" type="color" name="cor-tabs" id="cor-tabs" />
+		</div>
+
+		<div id="placar">
+			<div class="label">
+			    Placar:
+			</div>
+
+		    <span id="jogador1">
+		        <span class="label">Jogador 1:</span><span class="placar">0</span>
+		    </span>
+
+		    <span id="jogador2">
+		        <span class="label">Jogador 2:</span><span class="placar">0</span>
+		    </span>
+	  	</div>
+
+        <div id="info-geral">
+		    <button id="botaoInicio">Iniciar</button>
+		    Controles: <input type="text" id="controles" placeholder='Clique aqui. Use as setas para cima e para baixo e "w" e "s"' /></div>
+		</div>
+
+		<div id="botoes-mobile">
+			<button id="botao-cima-jogador-1">Para cima - jogador 1</button>
+			<button id="botao-baixo-jogador-1">Para baixo - jogador 1</button>
+			<button id="botao-cima-jogador-2">Para cima - jogador 2</button>
+			<button id="botao-baixo-jogador-2">Para baixo - jogador 2</button>
+		</div>
+
+        <div id="campo"></div>
+         
+		<div class="linha linhaVertical linhaVerticalSuperior linhaEsquerda" id="linhaEsquerdaSuperior"></div>
+		<div class="linha linhaVertical linhaVerticalSuperior linhaDireita" id="linhaDireitaSuperior"></div>
+		<div class="linha linhaVertical linhaVerticalInferior linhaEsquerda" id="linhaEsquerdaInferior"></div>
+		<div class="linha linhaVertical linhaVerticalInferior linhaDireita" id="linhaDireitaInferior"></div>
+		<div class="linha linhaHorizontal" id="linhaSuperior"></div>
+		<div class="linha linhaHorizontal" id="linhaInferior"></div>
+		<div class="linha" id="linhaCentro"></div>
+		
+		<div class="tab" id="tab1"></div>
+		<div class="tab" id="tab2"></div>
+
+		<div id="bola"></div>
+			
+		<audio id="somGol" src="gol.mp3">
+			<p>Seu navegador não suporta o elemento audio.</p>
+		</audio>
+    </body>
+</html>

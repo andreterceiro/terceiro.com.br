@@ -1,0 +1,150 @@
+<html>
+   <head> 
+	<title>Endereçamento IP - exercícios</title>
+   </head>
+   <body>
+
+<form method=post action=index.php>
+
+
+<h2 align = center> <font color = "0000ff"> Resolução do exercício 2</font> </h2> <br>
+
+&nbsp; &nbsp; &nbsp;  Primeiro vamos verificar em que classe está o endereço. Convertendo o primeiro octeto para binário, temos: <br>
+<p align = center> 200 <sub>(10) </sub> = <font color = 0000ff> 110</font> 00000 <sub>(2)</sub> </p>  <br>
+
+&nbsp; &nbsp; &nbsp; Descobrimos então que o endereço pertence à classe C, ou seja, podemos utilizar apenas o último octeto para dividir em sub-redes. Para dividir o endereço em 10 sub-redes utilizáveis devmos pegar emprestado 4 bits do campo host, pois 2<sup><font color = 0000ff>4</font></sup>-2 = 14. Lembrando que subtraimos 2 porque não utilizamos a primeira nem a última sub-rede. Como pegamos 2 bits, o campo host está menor. Antes ele possuia 8 bits, agora possui 4 (8 - 4 = 4). Temos que verificar se 4 bits atendem nossa necessidade para o número de hosts, então calculamos: 
+<p align = center> 2<sup><font color = 0000ff>4</font></sup>-2=14 </p> <br>
+
+&nbsp; &nbsp; &nbsp;  Lembrando que subtraimos 2 agora porque o primeiro endereço de cada sub-rede representa a própria sub-rede e o último é utilizado para broadcast dentro da sub-rede. Nossa necessidade é de 14 hosts por sub-rede, então temos nossa necessidade satisfeita.
+&nbsp; &nbsp; &nbsp; Vamos então calcular a máscara de sub-rede. Tínhamos antes do cálculo 24 bits para rede e 8 para host. Após nosso cálculo, temos 24 bits para rede, 4 para sub-rede e 4 para host. Como tanto os bits de rede e sub-rede são representados pelo algarismo "1" (em binário) e na prática representam a mesma coisa, poderíamos dizer também que temos 28 bits para rede/sub-rede e 4 para hosts. A máscara fica então assim: <br> <br>
+
+<p align = center> <font color = ff0000> 11111111.1111111.11111111.1111</font><font color = 009900>0000</font> <br> <br>
+* <font color = ff0000> 1 = rede/sub-rede </font>,<font color = 009900> 0 = host </font> </p>  <br>
+
+&nbsp; &nbsp; &nbsp; Convertendo para decimal, temos:<br> <br>
+<p align = center>  255.255.255.240 </p><br> 
+
+&nbsp; &nbsp; &nbsp; Lembrando que quando convertemos a máscara de binário para decimal, "esquecemos" a divisão rede/sub-rede - host e analisamos apenas a divisão por octetos. <br> <br>
+
+&nbsp; &nbsp; &nbsp; Agora vamos definir qual é o endereço da última sub-rede utilizável. Como não alteramos os três primeiros octetos, que representam a rede, não precisamos analisá-lo. Vamos analisar apenas o último octeto. A última sub-rede tem como valor no último octeto: <br><br>
+<p align = center><font color = dd00dd> 1111</font><font color = aaaa00>0000</font><br> <br>
+<font color = dd00dd> 4 bits de sub-rede</font>, <font color = aaaa00>4 bits de host</font> </p> <br>
+
+&nbsp; &nbsp; &nbsp; Três detalhes muito importantes:
+
+<ul>
+   <li> O campo host está preenchido todo com o algarismo 0. É assim que ele deve estar quando calculamos um endereço de sub-rede </li>
+   <li> A última sub-rede tem o valor 1111 em binário, que é igual a 15 em decimal; </li>
+   <li> O campo sub-rede está preenchido com o valor da última sub-rede, mas ela não é utilizável (a primeira e a última sub-redes não são utilizáveis). </li>
+</ul><br>
+
+&nbsp; &nbsp; &nbsp; Já que a última sub-rede (sub-rede 0) não é utilizável, vamos calcular o endereço da primeira sub-rede utilizável. Em binário, teremos este valor no último octeto:<br><br>
+<p align = center><font color = dd00dd> 1110</font><font color = aaaa00>0000</font><br><br>
+&nbsp; &nbsp; &nbsp; <font color = dd00dd> 4 bits de sub-rede</font>, <font color = aaaa00>4 bits de host</font></p> <br>
+
+&nbsp; &nbsp; &nbsp; Analisando novamente alguns detalhes muito importantes:
+
+<ul>
+   <li> O campo host está preenchido todo com o algarismo 0. É assim que ele deve estar quando calculamos um endereço de sub-rede </li>
+   <li> A última sub-rede <b>utilizável </b> tem o valor 1110 em binário, que é igual a 14 em decimal. Lembre-se que calculamos que teríamos 14 sub-redes utilizáveis (2<sup>4</suP>-2=14). Então a última sub-rede é a sub-rede 14; </li>
+</ul><br>
+
+&nbsp; &nbsp; &nbsp; Descobrimos o valor em binário, convertendo para decimal, temos: <br>
+<p align = center>11100000<sub>(2)</sub> = <font color = ffaa55>224</font><sub>(10)</sub> </p> <br>
+
+&nbsp; &nbsp; &nbsp; Então vamos escrever o endereço completo, "anexando" o octeto que calculamos aos três primeiros octetos: <br><br>
+<p align = center> 200.214.150.<font color = ffaa55>224</font> </p><br>
+
+&nbsp; &nbsp; &nbsp; Agora devemos calcular o endereço de broadcast da última sub-rede utilizável. Voltaremos para o número em binário e iremos manter o valor dos bits que representam a sub-rede, trocando apenas o valor dos bits do campo host de 0 para 1, pois para termos um broadcast dentro da sub-rede, todos os bits do campo host devem ser preenchidos com o valor 1. Veja: <br>
+
+<p align = center> <font color = dd00dd> 1110</font><font color = aaaa00>1111</font><br><br>
+&nbsp; &nbsp; &nbsp; <font color = dd00dd> 4 bits de sub-rede</font>, <font color = aaaa00>4 bits de host - todos preenchidos com 1 (broadcast) </font></p><br>
+
+&nbsp; &nbsp; &nbsp; Descobrimos o valor em binário, convertendo para decimal, temos: <br>
+<p align = center>11101111<sub>(2)</sub> = <font color = ffaa55>239</font><sub>(10)</sub></p>  <br>
+
+&nbsp; &nbsp; &nbsp; Então vamos escrever o endereço completo, "anexando" o octeto que calculamos aos três primeiros octetos: <br>
+<p align = center> 200.214.150.<font color = ffaa55>239</font> </p> <br>
+
+Ok..., agora falta apenas classificar o endereço 200.214.150.143. Vamos analisar o último octeto, começando convertendo o valor dele: <br> 
+
+<p align = center> 143<sub>(10)</sub> = 10001111<sub>(2)</sub> </p><br>
+
+&nbsp; &nbsp; &nbsp; Vamos analisar na estrutura sub-rede / host: <br> 
+<p align = center><font color = dd00dd> 1000</font><font color = aaaa00>1111</font> </p><br>
+ 
+&nbsp; &nbsp; &nbsp; Analisando alguns detalhes muito importantes: 
+<ul> 
+   <li> O campo host não está preenchido todo com o algarismo 0, então este endereço não representa uma sub-rede.</li>
+   <li> O campo host está preenchido todo com o algarismo 1, então este endereço representa um broadcast.</li>
+</ul><br>
+
+&nbsp; &nbsp; Para descobrirmos a qual sub-rede pertence este endereço de broadcast, podemos utilizar dois métodos:
+<ol>
+   <li> Colocar o valor 0 em todos os bits de host, sem alterar os bits de rede e sub-rede. </li>
+   <li> Aplicar uma operação AND do endereço com a máscara de sub-rede </li>
+</ol> <br>
+
+&nbsp; &nbsp; &nbsp;  Com os dois métodos obtemos o mesmo resultado. Eu prefiro o 1º método. Vamos analisar apenas o último octeto, pois neste caso não alteramos o 1º, o 2º nem o 3º octetos. O valor dele é 10001111 (143 em binário). O valor dos bits de sub-rede é <font color = dd00dd> 1000</font> e o valor dos bits do campo host é <font color = aaaa00>1111</font>. Conforme descrevemos anteriormente, vamos alterar o valor dos bits do campo host para 0 e obteremos assim a sub-rede a qual o host pertence. O octeto em binário ficará assim: <br>
+<p align = center><font color = dd00dd> 1000</font><font color = aaaa00>0000</font>. </p><br>
+&nbsp; &nbsp; &nbsp; Convertendo o resultado obtido para decimal e anexando-o aos três outros octetos, obteremos a resposta: <br>
+
+<p align = center> <font color = dd00dd> 1000</font><font color = aaaa00>0000</font><sub>(2)</sub> = 128<sub>(10)</sub> </p> <br>
+
+&nbsp; &nbsp; &nbsp; Concluindo, o host 200.214.150.143, utilizando a máscara 255.255.255.240, pertence a sub-rede 200.214.150.128.<br><BR><br>
+
+&nbsp; &nbsp; &nbsp; Vamos demonstrar também como obter o mesmo resultado através de uma operação AND com a máscara de sub-rede. Primeiro vamos passar o endereço 200.214.150.143 e a máscara 255.255.255.240 para binário: <br><br>
+
+<Table align = center cellspacing = 1 border = 1>
+   <tbody align = center>
+	<tr> 
+	   <td> Decimal</td>
+	   <td> Binário</td>
+	</tr>
+	<tr> 
+	   <td> 200.214.150.143  </td>
+	   <td> 11001000.11010110.10010110.10001111</td>
+	</tr>
+	<tr> 
+	   <td> 255.255.255.240 </td>
+	   <td> 11111111.11111111.11111111.11110000</td>
+	</tr>
+   </tbody>
+</table> <br> <br>
+
+&nbsp; &nbsp; &nbsp; Vamos agora aplicar uma operação AND, algarimo por algarismo: <br>
+<br>
+
+<table align = center>
+   <tbody>
+	<tr>
+	   <td> 11001000.11010110.10010110.10001111</td>
+	</tr>
+	<tr>
+	   <td> 11111111.11111111.11111111.11110000</td>
+	</tr>
+	<tr>
+	   <td> --------------------------------------------- </td>
+	</tr>
+	<tr>
+	   <td> 11001000.11010110.10010110.10000000</td>
+  	</tr>
+   </tbody>
+</table> <br> <br>
+
+&nbsp; &nbsp; &nbsp; Convertendo 11001000.11010110.10010110.10000000 para decimal, obtemos 200.214.150.128, o mesmo resultado obtido com o outro método. <br> <br>
+ 
+<ul> Finalizando, vamos escrever os resultados obtidos:
+   <li> Máscara = 255.255.255.240 </li>
+   <li> Endereço da última sub-rede utilizável = 200.214.150.224 </li>
+   <li> Endereço de broadcast da última sub-rede utilizável = 200.214.150.239</li>
+   <li> Classificação do endereço 200.214.150.143 = broadcast </li>
+   <li> A sub-rede a qual pertence o broadcast 200.214.150.143 é 200.214.150.128 </li>
+<ul> <br><br>
+
+<p Align = center> <input type= submit value = voltar></p>
+</form>
+   </body>
+</html> 
+
+

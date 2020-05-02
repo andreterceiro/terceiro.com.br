@@ -1,0 +1,498 @@
+<html>
+<meta name="description" content="Exercícios sobre endereçamento IP">
+<meta name="keywords" content= "IP, TCP/IP, cálculo, exercício, Cisco"> 
+
+    <head>	
+    	<title>
+	    Endereçamento IP 
+        </title>
+
+<script>
+
+   function Avaliar1() {
+   erro = ""
+	if (document.Formulario1.ex1mascara.value != "255.255.255.192") {
+	   erro = "Máscara de sub-rede \n"}
+        if (document.Formulario1.ex1subrede.value != "192.168.0.64") {
+	   document.Formulario1.ex1subrede.setfocus
+           erro = erro + "Endereço da 1ª sub-rede utilizável \n"   }
+        if (document.Formulario1.ex1broadcast.value != "192.168.0.127") {
+	   erro = erro + "Endereço de broadcast da 1ª sub-rede utilizável \n"}
+        if (document.Formulario1.select1.value != "host") {
+           erro = erro + "Classificação do endereço 192.168.0.140 \n" }
+        else if (document.Formulario1.ex1pertence.value != "192.168.0.128") {
+	   erro = erro + "Sub-rede a qual pertence o endereço 192.168.0.140"}
+  
+        if (erro == "") {alert ("Correto !")}
+        else {alert ("Erros : " + "\n \n" + erro)} 
+        }  
+
+
+   function Avaliar2() {
+   erro = ""
+	if (document.Formulario2.ex2mascara.value != "255.255.255.240") {
+	   erro = "Máscara de sub-rede \n"}
+        if (document.Formulario2.ex2subrede.value != "200.214.150.224") {
+	   document.Formulario2.ex2subrede.setfocus
+           erro = erro + "Endereço da última sub-rede utilizável \n"   }
+        if (document.Formulario2.ex2broadcast.value != "200.214.150.239") {
+	   erro = erro + "Endereço de broadcast da última sub-rede utilizável \n"}
+        if (document.Formulario2.select2.value != "host") {
+           erro = erro + "Classificação do endereço 200.214.150.143 \n" }
+        else if (document.Formulario2.ex2pertence.value != "200.214.150.128") {
+	   erro = erro + "Sub-rede a qual pertence o endereço 200.214.150.143"}
+       
+        if (erro == "") {alert ("Correto !")}
+        else {alert ("Erros : " + "\n \n" + erro)} 
+        }  
+
+
+   function Avaliar3() {
+   erro = ""
+	if (document.Formulario3.ex3mascara.value != "255.255.254.0") {
+	   erro = "Máscara de sub-rede \n"}
+        if (document.Formulario3.ex3subrede.value != "140.168.20.0") {
+	   document.Formulario3.ex3subrede.setfocus
+           erro = erro + "Endereço da 1ª sub-rede utilizável \n"   }
+        if (document.Formulario3.ex3broadcast.value != "140.168.21.255") {
+	   erro = erro + "Endereço de broadcast da 1ª sub-rede utilizável \n"}
+        if (document.Formulario3.select3.value != "host") {
+           erro = erro + "Classificação do endereço 140.168.155.0 \n" }
+        else if (document.Formulario3.ex3pertence.value != "140.168.154.0") {
+	   erro = erro + "Sub-rede a qual pertence o endereço 140.168.155.0"}
+       
+        if (erro == "") {alert ("Correto !")}
+        else {alert ("Erros : " + "\n \n" + erro)} 
+        }  
+
+
+   function Avaliar4() {
+   erro = ""
+	if (document.Formulario4.ex4mascara.value != "255.255.255.224") {
+	   erro = "Máscara de sub-rede \n"}
+        if (document.Formulario4.ex4subrede.value != "178.10.11.64") {
+	   document.Formulario4.ex4subrede.setfocus
+           erro = erro + "Endereço da 90ª sub-rede utilizável \n"   }
+        if (document.Formulario4.ex4broadcast.value != "178.10.11.95") {
+	   erro = erro + "Endereço de broadcast da 1ª sub-rede utilizável \n"}
+        if (document.Formulario4.select4.value != "rede") {
+           erro = erro + "Classificação do endereço 178.10.155.0 \n" }
+       
+        if (erro == "") {alert ("Correto !")}
+        else {alert ("Erros : " + "\n \n" + erro)} 
+        }  
+
+   function Avaliar5() {
+   erro = ""
+   erro0= ""
+   erro1= ""
+   erro2= "" 
+   erro3= ""
+   erro4= ""
+   erro5= "" 
+   erro6= "" 
+   erro7= "" 
+	
+        if (document.Formulario5.ex5mascara.value != "255.255.255.224") {
+	   erro = "Máscara de sub-rede \n"}
+        if (document.Formulario5.select5.value != "host") {
+           erro = erro + "Classificação do endereço 221.10.15.50 \n" }
+	else if (document.Formulario5.ex5pertence.value != "210.10.15.32"){
+           erro = erro + "Sub-rede a qual pertence o endereço 221.10.15.50 \n" }
+
+        if (document.Formulario5.ex5subrede0.value != "221.10.15.0") {
+           erro0 = erro0 + "Endereço da sub-rede 0, " }
+        if (document.Formulario5.ex51host0.value != "221.10.15.1") {
+           erro0 = erro0 + "Endereço do 1º host da sub-rede 0, " }
+        if (document.Formulario5.ex5ultimohost0.value != "221.10.15.30") {
+           erro0 = erro0 + "Endereço do último host da sub-rede 0, " }
+        if (document.Formulario5.ex5broadcast0.value != "221.10.15.31") {
+           erro0 = erro0 + "Endereço de broadcast da sub-rede 0, " }
+
+        if (document.Formulario5.ex5subrede1.value != "221.10.15.32") {
+           erro1 = erro1 + "Endereço da sub-rede 1, " }
+        if (document.Formulario5.ex51host1.value != "221.10.15.33") {
+           erro1 = erro1 + "Endereço do 1º host da sub-rede 1, " }
+        if (document.Formulario5.ex5ultimohost1.value != "221.10.15.62") {
+           erro1 = erro1 + "Endereço do último host da sub-rede 1, " }
+        if (document.Formulario5.ex5broadcast1.value != "221.10.15.63") {
+           erro1 = erro1 + "Endereço de broadcast da sub-rede 1, " }
+
+        if (document.Formulario5.ex5subrede2.value != "221.10.15.64") {
+           erro2 = erro2 + "Endereço da sub-rede 2, " }
+        if (document.Formulario5.ex51host2.value != "221.10.15.65") {
+           erro2 = erro2 + "Endereço do 1º host da sub-rede 2, " }
+        if (document.Formulario5.ex5ultimohost2.value != "221.10.15.94") {
+           erro2 = erro2 + "Endereço do último host da sub-rede 2, " }
+        if (document.Formulario5.ex5broadcast2.value != "221.10.15.95") {
+           erro2 = erro2 + "Endereço de broadcast da sub-rede 2, " }
+
+        if (document.Formulario5.ex5subrede3.value != "221.10.15.96") {
+           erro3 = erro3 + "Endereço da sub-rede 3, " }
+        if (document.Formulario5.ex51host3.value != "221.10.15.97") {
+           erro3 = erro3 + "Endereço do 1º host da sub-rede 3, " }
+        if (document.Formulario5.ex5ultimohost3.value != "221.10.15.126") {
+           erro3 = erro3 + "Endereço do último host da sub-rede 3, " }
+        if (document.Formulario5.ex5broadcast3.value != "221.10.15.127") {
+           erro3 = erro3 + "Endereço de broadcast da sub-rede 3, " }
+
+        if (document.Formulario5.ex5subrede4.value != "221.10.15.128") {
+           erro4 = erro4 + "Endereço da sub-rede 4, " }
+        if (document.Formulario5.ex51host4.value != "221.10.15.129") {
+           erro4 = erro4 + "Endereço do 1º host da sub-rede 4, " }
+        if (document.Formulario5.ex5ultimohost4.value != "221.10.15.158") {
+           erro4 = erro4 + "Endereço do último host da sub-rede 4, " }
+        if (document.Formulario5.ex5broadcast4.value != "221.10.15.159") {
+           erro4 = erro4 + "Endereço de broadcast da sub-rede 4, " }
+
+        if (document.Formulario5.ex5subrede5.value != "221.10.15.160") {
+           erro5 = erro5 + "Endereço da sub-rede 5, " }
+        if (document.Formulario5.ex51host5.value != "221.10.15.161") {
+           erro5 = erro5 + "Endereço do 1º host da sub-rede 5, " }
+        if (document.Formulario5.ex5ultimohost5.value != "221.10.15.190") {
+           erro5 = erro5 + "Endereço do último host da sub-rede 5, " }
+        if (document.Formulario5.ex5broadcast5.value != "221.10.15.191") {
+           erro5 = erro5 + "Endereço de broadcast da sub-rede 5, " }
+
+        if (document.Formulario5.ex5subrede6.value != "192.168.0.192") {
+           erro6 = erro6 + "Endereço da sub-rede 6, " }
+        if (document.Formulario5.ex51host6.value != "192.168.0.193") {
+           erro6 = erro6 + "Endereço do 1º host da sub-rede 6, " }
+        if (document.Formulario5.ex5ultimohost6.value != "192.168.0.222") {
+           erro6 = erro6 + "Endereço do último host da sub-rede 6, " }
+        if (document.Formulario5.ex5broadcast6.value != "192.168.0.223") {
+           erro6 = erro6 + "Endereço de broadcast da sub-rede 6, " }
+
+        if (document.Formulario5.ex5subrede7.value != "192.168.0.224") {
+           erro7 = erro7 + "Endereço da sub-rede 7, " }
+        if (document.Formulario5.ex51host7.value != "192.168.0.225") {
+           erro7 = erro7 + "Endereço do 1º host da sub-rede 7, " }
+        if (document.Formulario5.ex5ultimohost7.value != "192.168.0.254") {
+           erro7 = erro7 + "Endereço do último host da sub-rede 7, " }
+        if (document.Formulario5.ex5broadcast7.value != "192.168.0.255") {
+           erro7 = erro7 + "Endereço de broadcast da sub-rede 7, " }
+
+
+       
+        if (erro == "") { alert ("Correto !") }
+        else { alert ("Erros : " + "\n \n" + erro + "\n" + erro0 + "\n" + erro1 + "\n" + erro2 + "\n" + erro3 + "\n" + erro4 + "\n" + erro5 + "\n" + erro6 + "\n" + erro7) } 
+        }  
+
+</script>
+
+     </head>
+     <body>
+
+<form method=get name="Formulario1"   action=resolucao1.php>
+
+<H2 align = center><FONT COLOR = 0000ff> Exercícios </font></h2> <BR>
+
+1-&nbsp; Dê a máscara de sub-rede que corresponde à divisão da rede 192.168.0.0 em 2 sub-redes utilizáveis, com 60 hosts em cada sub-rede. Dê o endereço da primeira sub-rede utilizável e seu endereço de broadcast. Baseando-se na máscara encontrada, classifique o endereço 192.168.0.140 em rede host ou broadcast. Sendo host ou broadcast, informar a sub-rede a qual pertence. <BR><BR>
+<p align =center>
+    <table cellspacing = 8>
+	<thead>
+	    <tr align = center>
+		<th align = center  colspan = 2> <font color = 0000aa> Respostas </font></th>
+	    </tr>
+	    
+	</thead>	
+        <tbody>
+	    <tr>
+  		<td> Máscara </td>
+		<td> <input name = "ex1mascara"> &nbsp; </td> 
+	    </tr>
+	    <tr>
+		<td> Endereço da 1ª sub-rede utilizável </td>
+		<td> <input name = "ex1subrede"> </td>
+	    </tr>
+	    <tr>
+		<TD>Broadcast da 1ª sub-rede utilizável </td>
+		<td> <input name = "ex1broadcast"> </td>
+	    </tr>
+	    <tr>
+                <td> Classificação do endereço 192.168.0.140 </td>
+		<td> <select name = "select1">
+		        <option value="rede"> Rede ou sub-rede &nbsp; &nbsp;
+		        <option value="host"> Host
+		        <option value="broadcast"> Broadcast		
+		     </select>
+	        </td>
+	    </TR>	
+	    <tr>
+		<td> Sub-rede a qual pertence 192.168.0.140 * </td> 
+  		<td> <input name = "ex1pertence"> </td>
+	    </tr>
+	    <tr>
+	        <td> * Caso seja host ou broadcast </td>
+	    </tr>
+	</tbody>
+   </table> <br>
+
+
+<input type = "button" onclick = "Avaliar1()" value="    Avaliar    "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type = "submit" onclick = "" value="Resolucao"></p> <br> <br>
+</form>
+
+
+<form method=get name="Formulario2"  action=resolucao2.php>
+
+2-&nbsp; Dê a máscara de sub-rede que corresponde à divisão da rede 200.214.150.0 em 10 sub-redes utilizáveis, com 14 hosts em cada sub-rede. Dê o endereço da última sub-rede utilizável e seu endereço de broadcast. Baseando-se na máscara encontrada, classifique o endereço 200.214.150.143 em rede host ou broadcast. Sendo host ou broadcast, informar a sub-rede a qual pertence. <BR><BR>
+
+<p align = "center">
+    <table cellspacing = 8>
+	<thead>
+	    <tr align = center >
+		<th align = center colspan = 2> <font color = 0000aa>Respostas                                   </font></th>
+	    </tr>
+	    
+	</thead>	
+        <tbody>
+	    <tr>
+  		<td> Máscara </td>
+	        <td> <input name="ex2mascara"> </td>
+	    </tr>
+	    <tr>
+		<td> Endereço da última sub-rede utilizável </td>
+		<td> <input name="ex2subrede"> </td>
+	    </tr>
+	    <tr>
+		<TD>Broadcast da última sub-rede utilizável </td>
+		<td> <input name="ex2broadcast"> </td>
+	    </tr>
+	    <tr>
+                <td> Classificação do endereço 200.214.150.143 </td>
+		<td> <select name="select2">
+		        <option value="rede"> Rede ou sub-rede &nbsp; &nbsp;
+		        <option value="host"> Host
+		        <option value="broadcast"> Broadcast		
+		     </select>
+	        </td>
+	    </TR>	
+	    <tr>
+		<td> Sub-rede a qual pertence 200.214.150.143 * </td> 
+  		<td> <input name="ex2pertence"> </td>
+	    </tr>
+	    <tr>
+	        <td> * Caso seja host ou broadcast </td>
+	    </tr>
+	</tbody>
+   </table> <br>
+
+<input type = "button" onclick = "Avaliar2()" value="    Avaliar    "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type = "submit" value="Resolucao"> </p> <br> <br>
+</form>
+
+
+<form method=get name="Formulario3"  action=resolucao3.php>
+
+3-&nbsp; Dê a máscara de sub-rede que corresponde à divisão da rede 140.168.0.0 em 100 sub-redes utilizáveis, com 500 hosts em cada sub-rede. Dê o endereço da décima sub-rede utilizável e seu endereço de broadcast. Baseando-se na máscara encontrada, classifique o endereço 140.168.155.0 em rede host ou broadcast. Sendo host ou broadcast, informar a sub-rede a qual pertence. <BR><BR>
+
+<p align = "center">
+    <table cellspacing = 8>
+	<thead>
+	    <tr align = center >
+		<th align = center colspan = 2> <font color = 0000aa>                 Respostas                           </font></th>
+	    </tr>
+	    
+	</thead>	
+        <tbody>
+	    <tr>
+  		<td> Máscara </td>
+	        <td> <input name="ex3mascara"> </td>
+	    </tr>
+	    <tr>
+		<td> Endereço da décima sub-rede utilizável </td>
+		<td> <input name="ex3subrede"> </td>
+	    </tr>
+	    <tr>
+		<TD>Broadcast da décima sub-rede utilizável </td>
+		<td> <input name="ex3broadcast"> </td>
+	    </tr>
+	    <tr>
+                <td> Classificação do endereço 140.168.155.0 </td>
+		<td> <select name="select3"> 
+	                 <option value="rede"> Rede ou sub-rede &nbsp; &nbsp;
+	                 <option value="host"> Host 
+	                 <option value="broadcast"> Broadcast
+		     </select>	
+		</td>
+	    </TR>	
+	    <tr>
+		<td> Sub-rede a qual pertence 140.168.155.0 * </td> 
+  		<td> <input name="ex3pertence"> </td>
+	    </tr>
+	    <tr>
+	        <td> * Caso seja host ou broadcast </td>
+	    </tr>
+	</tbody>
+   </table> <br>
+
+<input type = "button" onclick = "Avaliar3()" value="    Avaliar    "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type = "submit"  value="Resolucao"> </p> <br> <br>
+</form>
+
+<form method=get name="Formulario4"  action=resolucao4.php>
+
+4-&nbsp; Dê a máscara de sub-rede que corresponde à divisão da rede 178.10.0.0 em 2000 sub-redes utilizáveis, com 28 hosts em cada sub-rede. Dê o endereço da nonagésima sub-rede utilizável e seu endereço de broadcast. Baseando-se na máscara encontrada, classifique o endereço 178.10.155.0 em rede host ou broadcast. Sendo host ou broadcast, informar a sub-rede a qual pertence. <BR><BR>
+
+<p align = "center">
+    <table cellspacing = 8>
+	<thead>
+	    <tr align = center >
+		<th align = center colspan = 2> <font color = 0000aa> Respostas </font></th>
+	    </tr>
+	</thead>	
+        <tbody>
+	    <tr>
+  		<td> Máscara </td>
+	        <td> <input name="ex4mascara"> </td>
+	    </tr>
+	    <tr>
+		<td> Endereço da 90ª sub-rede utilizável </td>
+		<td> <input name="ex4subrede"> </td>
+	    </tr>
+	    <tr>
+		<TD>Broadcast da 1ª sub-rede utilizável </td>
+		<td> <input name="ex4broadcast"> </td>
+	    </tr>
+	    <tr>
+                <td> Classificação do endereço 178.10.155.0 </td>
+		<td> <select name="select4">
+		        <option value="rede"> Rede ou sub-rede &nbsp; &nbsp;
+		        <option value="host"> Host
+		        <option value=broadcast"> Broadcast		
+		     </select>
+	        </td>
+	    </TR>	
+	    <tr>
+		<td> Sub-rede a qual pertence 178.10.155.0 * </td> 
+  		<td> <input name="ex4pertence"> </td>
+	    </tr>
+	    <tr>
+	        <td> * Caso seja host ou broadcast </td>
+	    </tr>
+	</tbody>
+   </table> <br>  		
+
+<input type = "button" onclick = "Avaliar4()" value="    Avaliar    "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type = "submit"  value="Resolucao"> </p> <br> <br>
+</form>
+
+
+<form method=get name="Formulario5"  action=resolucao5.php>
+
+5-&nbsp; Dê a máscara de sub-rede que corresponde à divisão da rede 221.10.15.0 em 8 sub-redes (independente de serem utilizáveis), com 30 hosts em cada sub-rede. Dê o range de todas as sub-redes, identificando o endereço da sub-rede, do broadcast e do primeiro e último hosts de cada sub-rede. Baseando-se na máscara encontrada, classifique o endereço 221.10.15.50 em rede host ou broadcast. Sendo host ou broadcast, informar a sub-rede a qual pertence. <BR><BR>
+
+<p align = "center">
+    <table cellspacing = 8 >
+	<thead>
+	    <tr align = center >
+		<th align = center colspan = 2> <font color = 0000aa>                 Respostas                           </font></th>
+	    </tr>
+	    
+	</thead>	
+        <tbody>
+	    <tr>
+  		<td> Máscara </td>
+	        <td> <input name="ex5mascara"> </td>
+	    </tr>
+	    <tr>
+                <td> Classificação do endereço 221.10.15.50 </td>
+		<td> <select name="select5">
+		        <option value="rede" > Rede ou sub-rede &nbsp; &nbsp;
+		        <option value="host"> Host
+		        <option value="broadcast"> Broadcast		
+		     </select>
+	        </td>
+	     </TR>
+	     <tr>
+		<td> Sub-rede a qual pertence 221.10.15.50  * </td> 
+  		<td> <input name="ex5pertence"> </td>
+	    </tr>
+	    <tr>
+	        <td> * Caso seja host ou broadcast </td>
+	    </tr>
+	</tbody>
+   </table> <br> 
+
+
+   <table border = 1 bgcolor = eeeeee>
+	<thead>
+	   <Tr>
+	      <td colspan = 5 align = center> Ranges </td>
+	   </tr>
+	</thead>
+	<tbody>
+           <tr>
+	      <td rowspan = 2 align = center width = 50%> Nº </td>
+	      <td colspan = 4 align = center> Endereços </td>
+	   </tr>
+           <tr align = center>
+	      <td> Sub-rede </td>
+	      <td> 1º host </td>
+	      <td> Úlimo host </td>
+	      <td> Broadcast </td>
+           </tr>
+	   <tr align = center>
+	      <td> 0 </td>
+	      <td> <input name="ex5subrede0">  </td>	   
+	      <td> <input name="ex51host0"> </td>
+	      <td> <input name="ex5ultimohost0"> </td>
+	      <td> <input name="ex5broadcast0"> </td>
+	   </tr>
+	   <tr align = center>
+	      <td> 1 </td>
+	      <td> <input name="ex5subrede1">  </td>
+	      <td> <input name="ex51host1">  </td>
+	      <td> <input name="ex5ultimohost1">  </td>	   
+	      <td> <input name="ex5broadcast1">  </td>
+	   </tr>	   
+	   <tr align = center>
+	      <td>2</td>
+	      <td> <input name="ex5subrede2">  </td>	   
+	      <td> <input name="ex51host2"> </td>
+	      <td> <input name="ex5ultimohost2">  </td>
+	      <td> <input name="ex5broadcast2">  </td>
+	   </tr>
+           <tr align = center>
+	      <td> 3 </td>
+	      <td> <input name="ex5subrede3"> </td>
+	      <td> <input name="ex51host3">  </td>	   
+	      <td> <input name="ex5ultimohost3"> </td>
+	      <td> <input name="ex5broadcast3">  </td>
+	   </tr>
+           <tr align = center>
+	      <td> 4 </td>
+	      <td> <input name="ex5subrede4"> </td>
+	      <td> <input name="ex51host4">  </td>	   
+	      <td> <input name="ex5ultimohost4">  </td>
+	      <td> <input name="ex5broadcast4">  </td>
+	   </tr>
+           <tr align = center>
+	      <td> 5 </td>
+	      <td> <input name="ex5subrede5"> </td>
+	      <td> <input name="ex51host5">  </td>
+	      <td> <input name="ex5ultimohost5">  </td>	   
+	      <td> <input name="ex5broadcast5">  </td>	   
+	   </tr>
+           <tr align = center>
+	      <td> 6 </td>
+              <td> <input name="ex5subrede6"> </td>
+	      <td> <input name="ex51host6">  </td>
+	      <td> <input name="ex5ultimohost6">  </td>	   
+	      <td> <input name="ex5broadcast6">  </td>	   
+           </tr>
+           <tr align = center>
+	      <td> 7 </td>
+              <td> <input name="ex5subrede7"> </td>
+	      <td> <input name="ex51host7">  </td>
+	      <td> <input name="ex5ultimohost7">  </td>	   
+	      <td> <input name="ex5broadcast7">  </td>
+	   </tr>
+	</tbody>
+   </table> <br> <BR> 
+
+<input type = "button" onclick = "Avaliar5()" value="    Avaliar    "> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type = "submit"  value="Resolucao"> </p> <br> <br>
+
+
+
+</form>
+
+   </body>
+</html>
