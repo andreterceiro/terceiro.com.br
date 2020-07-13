@@ -1,5 +1,6 @@
 <?php
-if ($_POST['content'] != "") {
+ini_set('track_errors', 0);
+if (isset($_POST['content']) && $_POST['content'] != "") {
 	header('Content-Description: File Transfer');
 	header('Content-Type: application/octet-stream');
 	header('Content-Disposition: attachment; filename="' . $_POST['nome_do_arquivo'] . '"');
