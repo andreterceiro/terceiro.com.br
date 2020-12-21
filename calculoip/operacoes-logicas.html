@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+		<title>Endereçamento IP - exercícios - operações lógicas</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta charset="UTF-8" />
+		<meta name="description" content="Exercícios sobre endereçamento IP">
+        <meta name="keywords" content= "IP, TCP/IP, cálculo, exercício, Cisco">
+        <style>
+            div {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        É simples.
+        <div>
+            And (E): todas as portas lógicas na entrada devem ser 1 para a saída ser 1. Para 2 entradas:
+            <table border="1">
+                <tbody align="center">
+                    <tr>
+                        <td>Entrada 1</td>
+                        <td>Entrada 2</td>
+                        <td>Saída</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            OR (OU): Só 1 as portas lógica na entrada deve ser 1 para a saída ser 1. Para 2 entradas:
+            <table border="1">
+                <tbody align="center">
+                    <tr>
+                        <td>Entrada 1</td>
+                        <td>Entrada 2</td>
+                        <td>Saída</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table  border="1">
+        </div>
+
+        <div>
+            NOT (NÃO ou inversora): Neste caso só faz sentido para 1 entrada:
+            <table  border="1">
+                <tbody align="center">
+                    <tr>
+                        <td>Entrada</td>
+                        <td>Saída</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            XOR (exclusive OR): As entradas devem ser diferentes:
+            <table  border="1">
+                <tbody align="center">
+                    <tr>
+                        <td>Entrada 1</td>
+                        <td>Entrada 2</td>
+                        <td>Saída</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            Coincidência: As entradas devem ser iguais:
+            <table  border="1">
+                <tbody align="center">
+                    <tr>
+                        <td>Entrada 1</td>
+                        <td>Entrada 2</td>
+                        <td>Saída</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            O livro da dupla Idoeta/Capuano (editora Erica) tem isto e é simples. 
+        </div>
+    </body>
+</html> 
