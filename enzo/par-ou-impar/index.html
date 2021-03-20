@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                font-size: 30px;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("#botao-enviar").click(
+                    function() {
+                        if (validarFormulario() == false) {
+                            alert("Você deve selecionar par ou ímpar e inserir seu número.")
+                            return false;
+                        } 
+                
+                        let numeroAleatorio = Math.random();
+                        let numeroAleatorioVezes10 = numeroAleatorio * 10;
+                        let numeroAleatorioEscolhido = Math.floor(numeroAleatorioVezes10);
+
+                        $("#escolha-comuputador").text("A escolha do computador foi: " + numeroAleatorioEscolhido);
+
+                        let soma = numeroAleatorioEscolhido + parseInt($("#escolha-jogador").val());
+                        $("#resultado").text("O resultado foi " + soma);
+                        
+                        if ((soma % 2 == 0) && ($("#par-ou-impar-par")[0].checked)) {
+                            $("#pontuacao-voce").text(parseInt($("#pontuacao-voce").text()) + 1);
+                        } else if ((soma % 2 == 1) && ($("#par-ou-impar-impar")[0].checked)) {
+                            $("#pontuacao-voce").text(parseInt($("#pontuacao-voce").text()) + 1);
+                        } else {
+                            $("#pontuacao-computador").text(parseInt($("#pontuacao-computador").text()) + 1);
+                        }
+                    }
+                )
+            });
+
+            function validarFormulario() {
+                return ! (($(".par-ou-impar").val() != "par" && $(".par-ou-impar").val != "ímpar") || isNaN(parseInt($("#escolha-jogador").val()))); 
+            }
+        </script>
+    </head>
+    <body>
+        Placar: <br />
+        Você: <span id="pontuacao-voce" />0</span><br />
+        Computador: <span id="pontuacao-computador" />0</span>
+        
+        <hr />
+
+        <div>Par ou impar?</div>
+        <div>
+            <input type="radio" checked="checked" name="par-ou-impar" class="par-ou-impar" id="par-ou-impar-par" value="par" />Par
+            <input type="radio" name="par-ou-impar" id="par-ou-impar-impar" class="par-ou-impar" value="impar" />Ímpar
+        </div>
+
+        Escolha o seu número: <input type="text" name="escolha-jogador" id="escolha-jogador" />
+        <input type="button" name="botao-enviar" value="botao-enviar" id="botao-enviar" />
+
+        <hr />
+        <div id="escolha-comuputador"></div>
+        <div id="resultado"></div>
+    </body>
+</html>
