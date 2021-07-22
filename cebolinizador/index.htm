@@ -1,0 +1,25 @@
+<html doctype="html5">
+    <head>
+        <meta charset="utf-8" />
+        <title>Cebolinizador</title>
+    </head>
+    <body>
+        <div id="origem">
+            <div>Texto a Cebolinizar</div>
+            <textarea rows=20 cols=100 id="texto-origem"></textarea>
+        </div>
+        <div id="botao">
+            <button id="cebolinizar">Cebolinizar!</button>
+        </div>
+        <br />
+        <hr />
+        <br />
+        <div id="destino"></div>
+
+        <script>
+            document.getElementById("cebolinizar").onclick = function() {
+                document.getElementById("destino").innerText = document.getElementById("texto-origem").value.replaceAll("r", "l").replaceAll("R", "L") 
+            }
+        </script>
+    </body>
+</html>
