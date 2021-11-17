@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>References</title>
+    </head>
+    <body>
+        <ul>
+            <li><b>Flávio Capobianco</b>, diretor (contact with clients) in Promosapiens</li>
+            <li><b>Marcelo Rocha</b>, was in "my" team in Promosapiens</li>
+            <li><b>Reinaldo Souza</b>, director (creation) in Promosapiens</li>
+            <li><b>Thiago Pelizoni</b>, previous boss in Fundação Cásper Libero</li>
+            <li><b>Sérgio Toledo</b>, same job that me in Fundação Cásper Libero</li>
+            <li><b>Leandro Reis</b>, same job that me in Fundação Cásper Libero</li>
+            <li><b>Gabriel Helmuth</b>, same job that me in Promosapiens</li>
+            <li><b>Washington Silva</b>, same job that me in Fundação Cásper Libero</li>
+        </ul>
+    </body>
+</html>
